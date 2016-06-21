@@ -37,7 +37,7 @@ public class CommonJdkAdviceInterceptor implements JdkAdviceInterceptor{
 				node.getMethod().invoke(node.getAdvice(), object, method, args, obj);
 			}
 		} else {
-			object = chain.getMain().getMethod().invoke(obj, args);
+			object = method.invoke(obj, args);
 		}
 		
 		return object;
