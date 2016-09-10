@@ -1,6 +1,6 @@
 # candywrapper
 ##介绍
-一个极简的AOP框架，使用JDK自带的动态代理实现接口级别的注入，使用cglib、javassist框架实现类级别的注入，并通过静态注解和动态注解方式实现对被注入对象标识。
+一个极简的AOP框架，使用JDK自带的动态代理实现接口级别的注入，使用cglib、javassist框架实现类级别的注入，并通过静态注解和动态注解方式实现对被注入对象标识。目前暂不支持具有构造函数的类的注入。
 ##快速开始
 AOP框架为两部分
 * 使用JDK自带的动态代理实现接口级别的注入
@@ -105,5 +105,13 @@ public final class Tester {
 	}
 }
 ```
-
+###提供了方便的工具类：
+对于接口注入：
+```java
+TestAopInterface1 test = (TestAopInterface1)NeoTools.neoForInterface(TestAopForInterface.class);
+```
+对于类注入：
+```java
+TestAopForClass test = (TestAopForClass)NeoTools.neoForClass(TestAopForClass.class);
+```
 **That's all**
