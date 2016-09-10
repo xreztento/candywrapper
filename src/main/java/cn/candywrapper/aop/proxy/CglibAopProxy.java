@@ -14,12 +14,12 @@ public class CglibAopProxy implements AopProxy{
 	@Override
 	public <T> T getProxy(T classTarget) {
 		
-	    Enhancer enhancer=new Enhancer();
+	    Enhancer enhancer = new Enhancer();
 	    enhancer.setSuperclass(classTarget.getClass());
 	    CglibAopProxyHelper helper = new CglibAopProxyHelper(factory);
 	    Callback[] callbackArray = null;
 	    try {
-			callbackArray = helper.genClassbacks(classTarget.getClass());
+			callbackArray = helper.genCallbacks(classTarget.getClass());
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

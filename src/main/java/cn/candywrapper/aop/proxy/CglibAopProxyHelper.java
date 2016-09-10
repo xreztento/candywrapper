@@ -30,7 +30,7 @@ public class CglibAopProxyHelper {
 	private HashMap<Integer, Callback> callbackMap = new HashMap<Integer, Callback>();
 	private HashMap<String, Integer> methodNameMap = new  HashMap<String, Integer>();
 	
-	public Callback[] genClassbacks(Class<?> clazz) throws ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException{
+	public Callback[] genCallbacks(Class<?> clazz) throws ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException{
 		int callbackNum = 0;
 		//配置一个什么都不做的回调方法，以保持与原方法一致
 		callbackMap.put(callbackNum++, NoOp.INSTANCE);
